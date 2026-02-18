@@ -60,3 +60,23 @@ footer { text-align: center; padding: 20px 0; font-size: 0.9rem; background-colo
   backdrop-filter: blur(5px);
   z-index: 1000;
 }
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+  #hero {
+  animation: heroFloat 6s ease-in-out infinite;
+}
+
+@keyframes heroFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+  html {
+  scroll-behavior: smooth;
+}
