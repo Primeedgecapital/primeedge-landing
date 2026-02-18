@@ -83,7 +83,30 @@
       <a href="mailto:primeedgecapital9@gmail.com" class="btn">Contact Us</a>
     </div>
   </section>
+<!-- Floating Market Ticker -->
+<div id="crypto-ticker">
+  <span id="btc"></span>
+  <span id="eth"></span>
+  <span id="marketcap"></span>
+</div>
 
+<script>
+async function fetchCrypto() {
+  const res = await fetch('https://api.coingecko.com/api/v3/global');
+  const data = await res.json();
+
+  const btcRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+  const prices = await btcRes.json();
+
+  document.getElementById("btc").innerHTML = "BTC: $" + prices.bitcoin.usd;
+  document.getElementById("eth").innerHTML = "ETH: $" + prices.ethereum.usd;
+  document.getElementById("marketcap").innerHTML = "Global Market Cap: $" + 
+    Math.round(data.data.total_market_cap.usd / 1e12) + "T";
+}
+
+fetchCrypto();
+setInterval(fetchCrypto, 60000); // update every 60 seconds
+</script>
   <!-- Footer -->
   <footer>
     <p>© 2026 PrimeEdge Capital. All Rights Reserved.</p>
