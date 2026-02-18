@@ -1,8 +1,18 @@
 /* Basic Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-body { background-color: #0A1A2F; color: #fff; line-height: 1.6; }
+body { background-color: #0A1A2F; color: #fff; line-height: 1.6; }  
+{ background: linear-gradient(-45deg, #0A1A2F, #081428, #0d2240, #06132a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #fff;
+}
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 .container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 40px 0; }
 
 /* Hero Section */
@@ -33,4 +43,17 @@ footer { text-align: center; padding: 20px 0; font-size: 0.9rem; background-colo
   .packages { flex-direction: column; }
   #hero h1 { font-size: 2.2rem; }
   #hero h2 { font-size: 1.5rem; }
+
+#crypto-ticker {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: #C9A227;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  font-weight: bold;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
 }
