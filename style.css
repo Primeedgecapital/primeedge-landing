@@ -30,7 +30,7 @@ body {
 section { padding: 60px 0; }
 h3 { font-family: 'Playfair Display', serif; font-size: 2rem; color: #C9A227; margin-bottom: 20px; }
 p, li { font-size: 1rem; color: #fff; margin-bottom: 10px; }
-
+section { background: transparent; }
 /* Packages */
 .packages { display: flex; flex-wrap: wrap; gap: 20px; }
 .package { background-color: rgba(201,162,39,0.1); padding: 20px; border-left: 4px solid #C9A227; flex: 1; min-width: 250px; border-radius: 5px; }
@@ -48,15 +48,15 @@ footer { text-align: center; padding: 20px 0; font-size: 0.9rem; background-colo
   #hero h2 { font-size: 1.5rem; }
 
 #crypto-ticker {
-  position: fixed;
-  bottom: 0;
+  position: move;
+  top: 0;
   width: 100%;
   background: rgba(0,0,0,0.8);
   color: #C9A227;
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  font-weight: bold;
+  font-weight: italic;
   backdrop-filter: blur(5px);
   z-index: 1000;
 }
